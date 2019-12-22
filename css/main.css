@@ -1408,10 +1408,6 @@ body {
     padding: 4px;
     background: #ccc;
     border-radius: 8px; }
-  .card:hover img {
-    -webkit-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-            transform: scale(1.2); }
   .card:hover .descr {
     -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
