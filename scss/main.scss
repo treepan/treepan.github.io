@@ -49,28 +49,51 @@ body {
 .wrapper {
 	min-height: 100vh;
 	background: rgba($black, .5);
-	min-width: 1400px;
 	padding: 40px 0;
 	text-align: center;
 	font-family: 'Roboto Condensed', sans-serif;
+	@include media("≥desktop") {
+		min-width: 1400px;
+	}
+}
+
+.holder{
+	overflow: auto;
+}
+
+.frame {
+	display: table;
+	width: 100%;
 }
 
 .row {
+	min-width: 100%;
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
 	margin: 0 0 15px;
 }
 
 .gr {
+	flex-shrink: 0;
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: center;
 	border: 2px solid #0c0c0c;
 	padding: 4px;
 	border-radius: 10px;
 	background: rgba($black, .75);
 	position: relative;
+
+	.ver & {
+		display: block;
+
+		.card + .card {
+			margin: 20px 0 0;
+		}
+
+		+ .gr {
+			margin-left: 14px;
+		}
+	}
 
 	+ .gr {
 		margin-left: 20px;
@@ -99,13 +122,16 @@ body {
 }
 
 .card {
-	@include size (170px);
+	@include size(140px);
 	border: 2px solid #0c0c0c;
 	border-radius: 10px;
 	display: block;
 	position: relative;
 	overflow: hidden;
 	box-shadow: 0 0 15px rgba($black, .5);
+	@include media("≥desktop") {
+		@include size (170px);
+	}
 
 	.lg & {
 		@include size (150px);
